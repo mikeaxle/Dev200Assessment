@@ -1,0 +1,16 @@
+<div>
+  <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+    <h2>View  Animal</h2>
+    <button class="btn btn-success" [routerLink]="['/']">back</button>
+  </div>
+
+  <p>Animal Name: {{ animal.animalName }}</p>
+
+  <p>Animal Species: {{ animal.animalName }}</p>
+
+  <p>created: {{ animal.created | date: 'short' }}</p>
+
+  <p>updated: {{ animal.updated | date: 'short' }}</p>
+
+  <button type="button" class="btn btn-danger" (click)="deleteAnimal(animal)">Delete</button>
+</div>

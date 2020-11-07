@@ -1,0 +1,20 @@
+<div>
+  <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+    <h2>{{ animal.animalId ? 'Update' : 'Add New' }} Animal</h2>
+    <button class="btn btn-success" [routerLink]="['/']">back</button>
+  </div>
+
+  <form [formGroup]="animalForm" (ngSubmit)="addOrUpdateAnimal(animalForm)">
+    <div class="form-group">
+      <label for="animalName">Animal name:</label>
+      <input type="text" formControlName="animalName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="animalSpecies">Animal Species:</label>
+      <input type="text" formControlName="animalSpecies" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!animalForm.valid">Save</button>
+  </form>
+</div>

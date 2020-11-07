@@ -1,0 +1,32 @@
+<h2>Animals List</h2>
+
+<p *ngIf="!animals"><em>Loading list...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="animals">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Species</th>
+      <!-- <th>created</th> -->
+      <th>updated</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let animal of animals">
+      <td>{{ animal.animalId }}</td>
+      <td>{{ animal.animalName }}</td>
+      <td>{{ animal.animalSpecies }}</td>
+      <!-- <td>{{ animal.created | date: 'short' }}</td> -->
+      <td>{{ animal.updated | date: 'short' }}</td>
+      <td>
+        <button class="btn btn-success" (click)="viewAnimal(animal)">View</button>
+      </td>
+      <td>
+        <button class="btn btn-warning" (click)="editAnimal(animal)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
