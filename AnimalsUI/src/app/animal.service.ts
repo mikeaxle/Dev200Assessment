@@ -3,14 +3,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnimalService {
   private headers: HttpHeaders;
   private apiEndpoint: string = 'http://localhost:5000/api/animals';
 
   constructor(private http: HttpClient) {
-    this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
+    this.headers = new HttpHeaders({
+      'Content-Type': 'application/json; charset=utf-8',
+    });
   }
 
   /**

@@ -46,32 +46,32 @@ export class AddEditAnimalComponent implements OnInit {
     const data = animalForm.value;
 
     // get current data instance
-    const date = new Date()
+    const date = new Date();
 
     // check if adding or updating
     if (!this.animal.animalId) {
       // add dates
-      data.created = date.toISOString()
-      data.updated = date.toISOString()
+      data.created = date.toISOString();
+      data.updated = date.toISOString();
 
       // add to database
-      this.animalService.add(data).subscribe(res => {
-        console.log("animal added")
-        console.log(res)
-        alert("animal added")
-      })
+      this.animalService.add(data).subscribe((res) => {
+        console.log('animal added');
+        console.log(res);
+        alert('animal added');
+      });
     } else {
       // update animal object
       this.animal.animalName = data.animalName;
       this.animal.animalSpecies = data.animalSpecies;
-      this.animal.updated = date.toISOString()
+      this.animal.updated = date.toISOString();
 
       // update database
-      this.animalService.update(this.animal).subscribe(res => {
-        console.log("animal updated")
-        console.log(res)
-        alert("animal updated")
-      })
+      this.animalService.update(this.animal).subscribe((res) => {
+        console.log('animal updated');
+        console.log(res);
+        alert('animal updated');
+      });
     }
   }
 }
